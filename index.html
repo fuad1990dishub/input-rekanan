@@ -2,9 +2,90 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Form Rekanan SIPD</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0b1120;
+        color: #e5e7eb;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    h2 {
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        color: #9ca3af;
+        margin-bottom: 20px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .full {
+        grid-column: span 2;
+    }
+
+    label {
+        font-size: 13px;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #374151;
+        background: #111827;
+        color: #fff;
+    }
+
+    input:focus, textarea:focus {
+        border-color: #3b82f6;
+        outline: none;
+    }
+
+    .error {
+        border: 1px solid red;
+    }
+
+    .error-text {
+        color: red;
+        font-size: 12px;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 12px;
+        width: 100%;
+        background: #2563eb;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #1d4ed8;
+    }
+</style>
 </head>
+
 <body>
 
 <div class="container">
@@ -22,27 +103,27 @@
 
             <div>
                 <label>NIK</label>
-                <input type="text" placeholder="Masukkan nik disini ...">
+                <input type="text" id="nik" placeholder="Masukkan nik disini ...">
             </div>
 
             <div>
                 <label>Nama Usaha / Jasa / Lainnya</label>
-                <input type="text" placeholder="Masukkan nama usaha ...">
+                <input type="text" id="usaha" placeholder="Masukkan nama usaha ...">
             </div>
 
             <div>
                 <label>NPWP</label>
-                <input type="text" placeholder="Masukkan npwp disini ...">
+                <input type="text" id="npwp" placeholder="Masukkan npwp disini ...">
             </div>
 
             <div class="full">
                 <label>Nomor Telepon</label>
-                <input type="text" placeholder="Masukkan nomor telepon disini ...">
+                <input type="text" id="telepon" placeholder="Masukkan nomor telepon disini ...">
             </div>
 
             <div class="full">
                 <label>Alamat</label>
-                <textarea rows="4" placeholder="Masukkan alamat disini ..."></textarea>
+                <textarea id="alamat" rows="4" placeholder="Masukkan alamat disini ..."></textarea>
             </div>
 
             <div class="full">
@@ -57,5 +138,6 @@
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
