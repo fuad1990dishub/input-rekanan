@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Form Rekanan SIPD</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Informasi Umum</h2>
+    <div class="subtitle">Informasi berupa data diri rekanan</div>
+
+    <form id="formData">
+        <div class="grid">
+
+            <div>
+                <label>Nama Lengkap</label>
+                <input type="text" id="nama" placeholder="Masukkan nama lengkap disini ...">
+                <div class="error-text" id="errNama"></div>
+            </div>
+
+            <div>
+                <label>NIK</label>
+                <input type="text" placeholder="Masukkan nik disini ...">
+            </div>
+
+            <div>
+                <label>Nama Usaha / Jasa / Lainnya</label>
+                <input type="text" placeholder="Masukkan nama usaha ...">
+            </div>
+
+            <div>
+                <label>NPWP</label>
+                <input type="text" placeholder="Masukkan npwp disini ...">
+            </div>
+
+            <div class="full">
+                <label>Nomor Telepon</label>
+                <input type="text" placeholder="Masukkan nomor telepon disini ...">
+            </div>
+
+            <div class="full">
+                <label>Alamat</label>
+                <textarea rows="4" placeholder="Masukkan alamat disini ..."></textarea>
+            </div>
+
+            <div class="full">
+                <label>Link Google Drive</label>
+                <input type="url" id="link" placeholder="https://drive.google.com/...">
+            </div>
+
+        </div>
+
+        <button type="submit">Simpan</button>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
