@@ -1,31 +1,26 @@
 document.getElementById("formData").addEventListener("submit", function(e){
     e.preventDefault();
 
-    let nama = document.getElementById("nama");
-    let link = document.getElementById("link");
-    let errNama = document.getElementById("errNama");
+    const data = {
+        nama: document.getElementById("nama").value,
+        nik: document.querySelectorAll("input")[1].value,
+        usaha: document.querySelectorAll("input")[2].value,
+        npwp: document.querySelectorAll("input")[3].value,
+        telepon: document.querySelectorAll("input")[4].value,
+        alamat: document.querySelector("textarea").value,
+        link: document.getElementById("link").value
+    };
 
-    let valid = true;
-
-    nama.classList.remove("error");
-    errNama.innerText = "";
-
-    if(nama.value.trim() === ""){
-        nama.classList.add("error");
-        errNama.innerText = "Maaf, Nama lengkap harus di inputkan";
-        valid = false;
-    }
-
-    if(link.value && !link.value.includes("drive.google.com")){
-        alert("Link harus Google Drive");
-        valid = false;
-    }
-
-    if(valid){
-        if(link.value){
-            window.location.href = link.value;
-        } else {
-            alert("Data berhasil disimpan");
-        }
-    }
+    fetch("https://script.google.com/macros/s/AKfycbx4kMUlfH831nmur68338T37rNSXsWVqhTCmRSf-ZFTRiGNkH20DUAP4edWIt8qMv3M/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(res => {
+        alert("Data berhasil disimpan ke Google Sheets");
+    })
+    .catch(err => {
+        alert("Gagal menyimpan");
+        console.log(err);
+    });
 });
